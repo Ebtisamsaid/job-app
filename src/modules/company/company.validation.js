@@ -12,12 +12,7 @@ export const addCompany=Joi.object({
         address:Joi.string().required(),
         numberOfEmployees:Joi.string().valid(...Object.values(enumNumberOfempolyee)).required(),
         companyEmail:Joi.string().required(),
-        CreatedBy:Joi.custom((value,helper)=>{
-if(mongoose.Types.ObjectId.isValid(value)){
-    return true
-}
-helper.message("invalid id")
-        }).required(),
+     
 
 
         file:Joi.object({
